@@ -16,7 +16,7 @@ sudo docker push gitlab.mytestlab.xyz:4567/docker/images/blue-nginx
 kubectl apply -f kubernetes/deployments/blue-nginx.yml
 
 # Update the image of the running blue nginx deployment
-kubectl set image deployment/blue-nginx nginx=gitlab.mytestlab.xyz:4567/sudo docker/images/blue-nginx:latest
+kubectl set image deployment/blue-nginx nginx=gitlab.mytestlab.xyz:4567/docker/images/blue-nginx:latest
 
 # Update the proxy to proxy to the blue deployment
 kubectl apply -f kubernetes/services/proxy.yml
