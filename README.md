@@ -10,7 +10,7 @@ Assuming you do your development in the `master` branch (you could do it within 
     git push origin blue
 ```
 
-This will triger a pipeline within goCD that will run the `./build.sh` script.
+This will trigger a pipeline within goCD that will run the `./build.sh` script.
 
 The working of the script is documented via comments within the file. But here's a breakdown:
 
