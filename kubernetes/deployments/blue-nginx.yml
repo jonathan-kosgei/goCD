@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: blue-nginx
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        deployment: blue
+      name: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: gitlab.mytestlab.xyz:4567/docker/images/blue-nginx
+        imagePullPolicy: Always
+        resources:
+        ports: 
+        - containerPort: 80
+          name: http

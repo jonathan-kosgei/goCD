@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  labels: 
+    name: nginx
+  name: nginx
+spec: 
+  ports:
+    - port: 80
+      name: nginx
+  selector: 
+    name: blue
