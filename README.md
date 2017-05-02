@@ -1,12 +1,13 @@
 # goCD Blue/Green deployment
 
 ## Prerequisite
-On every node that the go agent is running do, to allow the agent to run docker commands
+1. On every node that the go agent is running do, to allow the agent to run docker commands
 ```
     sudo EDITOR=nano visudo
     # At the end of the file add
     go ALL = NOPASSWD: /bin/docker
 ```
+2. Set your Gitlab CI credentials i.e. the Username and Password as two secret variables - USERNAME and PASSWORD as referenced in the build script
 
 ## To push to Blue
 Assuming you do your development in the `master` branch (you could do it within the `blue` branch or a separate `dev` branch)
