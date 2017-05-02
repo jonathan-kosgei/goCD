@@ -5,8 +5,10 @@ metadata:
     name: nginx
   name: nginx
 spec: 
+  type: NodePort
   ports:
     - port: 80
+    nodePort: 30000
       name: nginx
   selector: 
     name: blue
