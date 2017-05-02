@@ -37,3 +37,35 @@ The working of the script is documented via comments within the file. But here's
     git commit -m ''
     git push origin green
 ```
+
+## How it works
+
+When you `git push origin green` the service updates to point to the `green` deployment
+```
+testing@ubuntu ~/P/goCD> kubectl describe svc nginx
+Name:	nginx
+Namespace:	default
+Labels:	name=nginx
+Selector:	name=green
+Type:	ClusterIP
+IP:	10.43.46.104
+Port:	nginx	80/TCP
+Endpoints:	<none>
+Session Affinity:	None
+No events.
+```
+
+When you `git push origin blue` it points to the `blue`
+```
+testing@ubuntu ~/P/goCD> kubectl describe svc nginx
+Name:	nginx
+Namespace:	default
+Labels:	name=nginx
+Selector:	name=blue
+Type:	ClusterIP
+IP:	10.43.46.104
+Port:	nginx	80/TCP
+Endpoints:	<none>
+Session Affinity:	None
+No events.
+```
