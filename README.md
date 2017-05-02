@@ -14,7 +14,7 @@ This will triger a pipeline within goCD that will run the `./build.sh` script.
 
 The working of the script is documented via comments within the file. But here's a breakdown:
 
-1. Auth to Gitlab
+1. Auth to Gitlab (The USERNAME and PASSWORD are set as secret variables within goCD)
 2. Build a new image with the new code
 3. Push the image to Gitlab CI
 4. Perform a rolling update to update the image being used by the blue (or green) deployment
