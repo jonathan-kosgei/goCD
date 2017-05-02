@@ -1,6 +1,6 @@
 # goCD Blue/Green deployment
 
-## Prerequisite
+## Prerequisites
 1. On every node that the go agent is running do, to allow the agent to run docker commands
 ```
     sudo EDITOR=nano visudo
