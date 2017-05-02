@@ -1,5 +1,13 @@
 # goCD Blue/Green deployment
 
+## Prerequisite
+On every node that the go agent is running do, to allow the agent to run docker commands
+```
+    sudo EDITOR=nano visudo
+    # At the end of the file add
+    go ALL = NOPASSWD: /bin/docker
+```
+
 ## To push to Blue
 Assuming you do your development in the `master` branch (you could do it within the `blue` branch or a separate `dev` branch)
 

@@ -4,13 +4,13 @@
 ###################
 
 # Login to the gitlab registry
-docker login --username $USERNAME --password $PASSWORD gitlab.mytestlab.xyz:4567
+sudo docker login --username $USERNAME --password $PASSWORD gitlab.mytestlab.xyz:4567
 
 # Build a new nginx image with the new index.html
-docker build -t gitlab.mytestlab.xyz:4567/docker/images/blue-nginx docker/nginx
+sudo docker build -t gitlab.mytestlab.xyz:4567/docker/images/blue-nginx docker/nginx
 
 # Push new image to the gitlab registry
-docker push gitlab.mytestlab.xyz:4567/docker/images/blue-nginx
+sudo docker push gitlab.mytestlab.xyz:4567/docker/images/blue-nginx
 
 # Update the image of the running blue nginx deployment
 kubectl set image deployment/blue-nginx nginx=gitlab.mytestlab.xyz:4567/docker/images/blue-nginx:latest
