@@ -10,4 +10,4 @@ spec:
   - port: 80
     nodePort: 30000
   selector: 
-    name: green
+    deployment: green
