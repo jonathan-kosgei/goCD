@@ -10,7 +10,15 @@
 2. Set your Gitlab CI credentials i.e. the Username and Password as two secret variables - USERNAME and PASSWORD as referenced in the build script
 3. Also set the above credential as a kubernetes secret that will be mounted to all pods with
 ```
-kubectl create secret docker-registry regsecret --docker-server=<your-registry-server> --docker-username=<your-name> --docker-password=<your-pword> --docker-email=<your-email>
+kubectl \
+create \
+secret \
+docker-registry \
+regsecret \
+--docker-server=<your-registry-server> \
+--docker-username=<your-name> \
+--docker-password=<your-pword> \
+--docker-email=<your-email>
 ```
 
 ## To push to Blue
